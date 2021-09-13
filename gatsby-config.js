@@ -1,7 +1,12 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
     title: "Tatya Koesandriani",
+    titleTemplate: "Tatya Koesandriani - %s",
+    description:
+      "Tatya Koesandriani",
+    url: "https://www.tatya.io",
+    twitterUsername: "@tortiyya",
+    siteUrl: "https://www.tatya.io",
   },
   plugins: [
     "gatsby-plugin-emotion",
