@@ -1,47 +1,49 @@
-import React from 'react';
-import {
-  Nav,
-  NavLink,
-  Bars,
-  NavMenu,
-  NavBtn,
-  NavBtnLink,
-} from './NavbarElements';
-  
+import *  as React from 'react';
+import styled from "@emotion/styled"
+
+const Nav = styled.nav`
+  margin: 28px auto;
+  color: #f1f1f1;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Rubik, sans-serif, serif;
+  padding: 0 80px;
+  @media (min-width: 1500px) {
+    width: 1280px;
+}
+`
+
+const ListWrapper = styled.ul`
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+`
+
+const NavbarItem = styled.li`
+  margin: 0 0 0 40px;
+  padding: 12px 20px;
+`
+
+const NavIcon = styled.li`
+  flex: 1;
+`
+const NavIcon2 = styled.span`
+  color: #a9a9a9;
+`
 const Navbar = () => {
+  
   return (
-    <>
-      <Nav>
-        <Bars />
-  
-        <NavMenu>
-          <NavLink to='/about' activeStyle>
-            About
-          </NavLink>
-          <NavLink to='/events' activeStyle>
-            Events
-          </NavLink>
-          <NavLink to='/annual' activeStyle>
-            Annual Report
-          </NavLink>
-          <NavLink to='/team' activeStyle>
-            Teams
-          </NavLink>
-          <NavLink to='/blogs' activeStyle>
-            Blogs
-          </NavLink>
-          <NavLink to='/sign-up' activeStyle>
-            Sign Up
-          </NavLink>
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
-        </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-        </NavBtn>
-      </Nav>
-    </>
-  );
-};
-  
+    <Nav>
+      <ListWrapper>
+        <NavIcon>Tatya Koesandriani — <br></br><NavIcon2>Experience Designer</NavIcon2></NavIcon>
+        <NavbarItem>About</NavbarItem>
+        <NavbarItem>Works</NavbarItem>
+        <NavbarItem>Resume</NavbarItem>
+      </ListWrapper>
+    </Nav>
+  )
+}
+
 export default Navbar;
