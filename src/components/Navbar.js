@@ -7,9 +7,12 @@ const Nav = styled.nav`
   font-size: 20px;
   font-weight: 500;
   font-family: Rubik, sans-serif, serif;
-  padding: 0 80px;
-  @media (min-width: 1500px) {
-    width: 1280px;
+  padding: 0 120px;
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
 }
 `
 

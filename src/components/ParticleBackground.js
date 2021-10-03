@@ -8,24 +8,26 @@ import styled from "@emotion/styled";
 
 const ParticleSection1 = styled.section`
     position: fixed;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
     z-index: -99;
 `
 const ParticleSection2 = styled.section`
     position: fixed;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
     z-index: -99;
 `
 
 export default function ParticleBackground() {
     return (
         <>
-            <ParticleSection1><Particles params={particlesConfigStar}></Particles></ParticleSection1>
-            <ParticleSection2><Particles params={particlesConfigBB}></Particles></ParticleSection2>
-            <ParticleSection2><Particles params={particlesConfigBW}></Particles></ParticleSection2>
-            <ParticleSection2><Particles params={particlesConfigBP}></Particles></ParticleSection2>
+            <ParticleSection1><Particles params={particlesConfigStar} height="100vh" width="100vw"/></ParticleSection1>
+            <ParticleSection2><Particles params={particlesConfigBB} height="100vh" width="100vw"/></ParticleSection2>
+            <ParticleSection2><Particles params={particlesConfigBW} height="100vh" width="100vw"/></ParticleSection2>
+            <ParticleSection2><Particles params={particlesConfigBP} height="100vh" width="100vw"/></ParticleSection2>
         </>
     );
 }

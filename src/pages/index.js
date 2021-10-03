@@ -15,10 +15,19 @@ import ilust2 from "../assets/ilust2/ilust2.svg";
 import cardkukun from "../assets/card/cardkukun.webp";
 import cardcatapa from "../assets/card/cardcatapa.webp";
 import cardta from "../assets/card/cardta.webp";
-import PageFooter from "../components/footer"
+import PageFooter from "../components/footer";
+import { useWindowSize } from "../helper/useWindowSize";
+
+const LOTTIE_WIDTH = 436;
+const LOTTIE_HEIGHT = 614;
+
+const breakpoints = [1080];
+
+const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 
 // styles
-document.body.style = "background: #1c1c1c; padding: 0; margin: 0;";
+document.body.style =
+  "background: #1c1c1c; padding: 0; margin: 0; top: 0; bottom: 0;";
 
 const ThisPage = styled.main`
   margin: auto;
@@ -26,8 +35,11 @@ const ThisPage = styled.main`
   padding: 0 120px;
   color: #f1f1f1;
   line-height: 150%;
-  @media (min-width: 1500px) {
+  @media (min-width: 1200px) {
     width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
   }
 `;
 
@@ -35,7 +47,7 @@ const Heading1 = styled.h1`
   font-size: 60px;
   line-height: 71.1px;
   font-weight: 700;
-  margin-block-end: 0; 
+  margin-block-end: 0;
   margin-block-start: 0;
 `;
 
@@ -82,14 +94,15 @@ const Btn = styled.a`
 `;
 
 const BtnIcon = styled.a`
-  padding: 12px;
+  padding: 8px;
   position: relative;
   border: 2px solid #f1f1f1;
   border-radius: 10px;
   margin: 0 16px 0 0;
   transition: 0.25s;
   color: #f1f1f1;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 0;
   &:hover {
     fill: #1c1c1c;
     background-color: #f1f1f1;
@@ -98,20 +111,36 @@ const BtnIcon = styled.a`
 `;
 
 const MainDiv = styled.div`
-  margin: 5vw 0 10vw 0;
+  margin: 5vw 0 5vw 0;
   width: 100%;
   flex-direction: row;
   display: flex;
   align-items: center;
+  @media (max-width: 920px) {
+    flex-direction: column;
+  }
+`;
+
+const CardContainer = styled.div`
+  margin: 5vw 0 5vw 0;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  @media (max-width: 1080px) {
+    flex-direction: column;
+  }
 `;
 
 const SubDivKiri1 = styled.div`
+  padding-right: 10vw;
   flex: 1;
 `;
 
 const SubDivKanan1 = styled.div`
   margin-left: auto;
   margin-right: 0;
+  position: relative;
 `;
 
 const SubDivKiri2 = styled.div`
@@ -120,6 +149,7 @@ const SubDivKiri2 = styled.div`
 
 const SubDivKanan2 = styled.div`
   flex: 0.5;
+  position: relative;
 `;
 
 const Card = styled.div`
@@ -143,6 +173,7 @@ const CardImg = styled.img`
 `;
 const CardTitle = styled.div`
   font-size: 40px;
+  line-height 300%;
   font-weight: 700;
   padding: 24px;
 `;
@@ -177,7 +208,7 @@ const SubDivKananCard = styled.div`
 `;
 
 const MainDivOther = styled.div`
-  margin: 5vw 0 10vw 0;
+  margin: 5vw 0 5vw 0;
   width: 100%;
   align-items: center;
 `;
@@ -186,32 +217,55 @@ const FirstOther = styled.div`
   padding: 40px;
   border-top: 2px solid #f1f1f1;
   border-bottom: 2px solid #f1f1f1;
-`
+`;
 
 const SecondOther = styled.div`
   padding: 40px;
   border: 0 0 0 2px solid #f1f1f1;
   border-bottom: 2px solid #f1f1f1;
-`
+`;
 const OtherH1 = styled.h1`
   font-size: 60px;
   font-weight: 700;
   line-height: 150%;
   margin: 0 0 20px 0;
-`
+`;
 
 const OtherH2 = styled.h2`
   font-size: 20px;
   font-weight: 400;
   line-height: 150%;
-  margin-block-end: 0; 
+  margin-block-end: 0;
   margin-block-start: 0;
-`
+`;
 
+const LottieMobile = styled.div`
+  @media (min-width: 920px) {
+    display: none;
+  }
+`;
 
+const LottieDesktop = styled.div`
+  @media (max-width: 920px) {
+    display: none;
+  }
+`;
+
+const LottieElementContainer = styled.div((props) => ({
+  position: "absolute",
+  width: props.width,
+  right: props.right,
+}));
+
+const IllustrationContainer = styled.div`
+  @media (max-width: 920px) {
+    display: none;
+  }
+`;
 
 // markup
 const IndexPage = () => {
+  const windowSize = useWindowSize();
   const [lottieRef, { isPaused, isStopped }, controls] = useLottie({
     renderer: "svg",
     loop: true,
@@ -221,6 +275,10 @@ const IndexPage = () => {
     },
     animationData,
   });
+
+  const width = windowSize.width < 1200 ? windowSize.width / 4 : LOTTIE_WIDTH;
+  const isMobile = windowSize.width < 920;
+
   return (
     <>
       <ParticleBackground />
@@ -229,13 +287,15 @@ const IndexPage = () => {
       <ThisPage>
         <MainDiv>
           <SubDivKiri1>
-            <Heading1>
-              Crafting magical <br />
-              experiences through
-              <br /> design
-            </Heading1>
+            <MobileLottie>
+            <Heading1>Hi-ya, It’s Tatya!</Heading1>
             <Heading2>
-              Currently crafting experiences at{" "}
+              Experience Designer passionate in establishing a harmonous
+              relationship between people and ever-emerging technologies by
+              crafting magical experience through design.
+              <br />
+              <br />
+              Currently casting my spells at{" "}
               <Link href="http://tokopedia.com">Tokopedia</Link>
             </Heading2>
             <BtnIcon
@@ -252,39 +312,54 @@ const IndexPage = () => {
             </BtnIcon>
           </SubDivKiri1>
           <SubDivKanan1>
-            <div>
-              <img src={arc1} style={{ position: "absolute" }} />
-            </div>
-            <div style={{ position: "absolute" }}>
-              <Lottie lottieRef={lottieRef} width={436} height={614} />
-            </div>
-            <div>
-              <img src={hole1} />
-            </div>
+            <LottieElementContainer width={width} right={0}>
+              <img
+                src={arc1}
+                style={{ position: "absolute", width: width, right: 0 }}
+              />
+            </LottieElementContainer>
+            <LottieElementContainer width={width} right={0}>
+              <Lottie
+                lottieRef={lottieRef}
+                width={width}
+                height={1.4 * width}
+              />
+            </LottieElementContainer>
+            <LottieElementContainer width={width} right={0}>
+              <img
+                src={hole1}
+                style={{ position: "absolute", width: width, right: 0 }}
+              />
+            </LottieElementContainer>
           </SubDivKanan1>
         </MainDiv>
 
         <MainDiv>
           <SubDivKiri2>
-            <img src={holeframe} style={{ position: "absolute" }} />
-            <img src={ilust2} />
+            <IllustrationContainer>
+              <img
+                src={holeframe}
+                style={{ position: "absolute", width: width }}
+              />
+              <img src={ilust2} style={{ width: width }} />
+            </IllustrationContainer>
           </SubDivKiri2>
           <SubDivKanan2>
-            <Heading1>
-              Tatya is an Experience Designer based in Surabaya, ID
-            </Heading1>
+            <Heading1>A Little About Me..</Heading1>
             <Heading2>
-              Having lived almost 20 years of my life not really knowing where I
-              was going, I found myself stumbling upon the field of UI/UX
-              Design. I found my soul sparks with passion doing design. I would
-              love to learn more and nourish this passion of mine and grow to be
-              a better product designer.
+              My unique quality that people sometimes found suprising is that I
+              have a bachelor degree in Civil Engineering. Yet I have been
+              awfully familiar with design since middle school. The last year of
+              my university I was introduced with UI/UX Design and how this
+              specific design field was all about the importance of usability
+              rather than aesthetics.
             </Heading2>
             <Btn>More About Me</Btn>
           </SubDivKanan2>
         </MainDiv>
 
-        <MainDiv>
+        <Heading1>Featured Projects</Heading1>
+        <CardContainer>
           <SubDivKiriCard>
             <Card>
               <CardImg src={cardkukun}></CardImg>
@@ -332,7 +407,7 @@ const IndexPage = () => {
               </CardChip>
             </Card>
           </SubDivKananCard>
-        </MainDiv>
+        </CardContainer>
 
         <MainDivOther>
           <FirstOther>
@@ -347,7 +422,6 @@ const IndexPage = () => {
       </ThisPage>
 
       <PageFooter />
-
     </>
   );
 };
