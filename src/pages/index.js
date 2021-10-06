@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import SEO from "../components/seo";
 import Navbar from "../components/Navbar";
 import styled from "@emotion/styled";
@@ -16,6 +16,8 @@ import cardkukun from "../assets/card/cardkukun.webp";
 import cardcatapa from "../assets/card/cardcatapa.webp";
 import cardta from "../assets/card/cardta.webp";
 import PageFooter from "../components/footer";
+import Burger from "../components/Burger";
+import Menu from "../components/Menu";
 import { useWindowSize } from "../helper/useWindowSize";
 
 const LOTTIE_WIDTH = 436;
@@ -34,12 +36,14 @@ const ThisPage = styled.main`
   font-family: Rubik, sans-serif, serif;
   padding: 0 120px;
   color: #f1f1f1;
-  line-height: 150%;
   @media (min-width: 1200px) {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
+  }
+  @media (max-width: 920px) {
+    padding: 0 24px;
   }
 `;
 
@@ -133,8 +137,10 @@ const CardContainer = styled.div`
 `;
 
 const SubDivKiri1 = styled.div`
-  padding-right: 10vw;
   flex: 1;
+  @media (min-width: 920px) {
+    padding-right: 10vw;
+  }
 `;
 
 const SubDivKanan1 = styled.div`
@@ -197,14 +203,27 @@ const Chip = styled.div`
   color: #1c1c1c;
   padding: 8px 24px;
   margin-right: 12px;
+  @media (max-width: 920px) {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
 `;
 
 const SubDivKiriCard = styled.div`
   margin-right: 30px;
+  @media (max-width: 920px) {
+    margin-right: 0;
+    width: 100%;
+  }
 `;
 
 const SubDivKananCard = styled.div`
   margin-left: 30px;
+  @media (max-width: 920px) {
+    margin-left: 0;
+    width: 100%;
+  }
 `;
 
 const MainDivOther = styled.div`
@@ -240,15 +259,8 @@ const OtherH2 = styled.h2`
 `;
 
 const LottieMobile = styled.div`
-  @media (min-width: 920px) {
-    display: none;
-  }
-`;
-
-const LottieDesktop = styled.div`
-  @media (max-width: 920px) {
-    display: none;
-  }
+  width: 100%;
+  margin-bottom: 20px;
 `;
 
 const LottieElementContainer = styled.div((props) => ({
@@ -265,8 +277,9 @@ const IllustrationContainer = styled.div`
 
 // markup
 const IndexPage = () => {
+  const [open, setOpen] = useState(false);
   const windowSize = useWindowSize();
-  const [lottieRef, { isPaused, isStopped }, controls] = useLottie({
+  const [lottieRef, ,] = useLottie({
     renderer: "svg",
     loop: true,
     rendererSettings: {
@@ -283,11 +296,40 @@ const IndexPage = () => {
     <>
       <ParticleBackground />
       <SEO />
-      <Navbar />
+      {!isMobile && <Navbar />}
+      {isMobile && (
+        <div>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
+      )}
       <ThisPage>
         <MainDiv>
+          {isMobile && (
+            <LottieMobile>
+              <LottieElementContainer width={width} right={"33%"}>
+                <img
+                  src={arc1}
+                  style={{ position: "absolute", width: width, right: "33%" }}
+                />
+              </LottieElementContainer>
+              <LottieElementContainer width={width} right={0}>
+                <Lottie
+                  lottieRef={lottieRef}
+                  width={width}
+                  height={1.4 * width}
+                />
+              </LottieElementContainer>
+              <LottieElementContainer width={width} right="33%">
+                <img
+                  src={hole1}
+                  style={{ position: "absolute", width: width, right: "33%" }}
+                />
+              </LottieElementContainer>
+              <div style={{ height: 1.4 * width, width: width }}></div>
+            </LottieMobile>
+          )}
           <SubDivKiri1>
-            <MobileLottie>
             <Heading1>Hi-ya, It’s Tatya!</Heading1>
             <Heading2>
               Experience Designer passionate in establishing a harmonous
@@ -312,25 +354,26 @@ const IndexPage = () => {
             </BtnIcon>
           </SubDivKiri1>
           <SubDivKanan1>
-            <LottieElementContainer width={width} right={0}>
-              <img
-                src={arc1}
-                style={{ position: "absolute", width: width, right: 0 }}
-              />
-            </LottieElementContainer>
-            <LottieElementContainer width={width} right={0}>
-              <Lottie
-                lottieRef={lottieRef}
-                width={width}
-                height={1.4 * width}
-              />
-            </LottieElementContainer>
-            <LottieElementContainer width={width} right={0}>
-              <img
-                src={hole1}
-                style={{ position: "absolute", width: width, right: 0 }}
-              />
-            </LottieElementContainer>
+            {!isMobile && (
+              <>
+                <LottieElementContainer width={width} right={0}>
+                  <img
+                    src={arc1}
+                    style={{ position: "absolute", width: width, right: 0 }}
+                  />
+                </LottieElementContainer>
+                <LottieElementContainer width={width} right={0}>
+                  <Lottie
+                    lottieRef={lottieRef}
+                    width={width}
+                    height={1.4 * width}
+                  />
+                </LottieElementContainer>
+                <div>
+                  <img src={hole1} style={{ width: width, right: 0 }} />
+                </div>
+              </>
+            )}
           </SubDivKanan1>
         </MainDiv>
 
