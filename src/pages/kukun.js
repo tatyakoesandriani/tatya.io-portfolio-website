@@ -1,7 +1,3 @@
-import * as React from "react";
-import SEO from "../components/seo";
-import Navbar from "../components/Navbar";
-import PageFooter from "../components/footer"
 import styled from "@emotion/styled";
 
 //styles
@@ -19,7 +15,7 @@ const ThisPage = styled.main`
 `;
 
 const KukunPage = () => {
-    
+    return null;
 }
 
 export default KukunPage;

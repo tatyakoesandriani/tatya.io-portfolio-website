@@ -2,11 +2,11 @@ import React from 'react';
 import { bool, func } from 'prop-types';
 import styled from "@emotion/styled"
 
-export const StyledBurger = styled.button`
+const StyledBurger = styled.button`
   z-index: 101;
   position: absolute;
   top: 5%;
-  left: 2rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

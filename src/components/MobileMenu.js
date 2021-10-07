@@ -1,8 +1,10 @@
 import React from "react";
-import { bool } from "prop-types";
+import { bool, func } from "prop-types";
 import styled from "@emotion/styled";
 
-export const StyledMenu = styled.nav`
+import Burger from './Burger';
+
+const StyledMobileMenu = styled.nav`
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -11,7 +13,7 @@ export const StyledMenu = styled.nav`
   opacity: 90%;
   height: 100vh;
   text-align: left;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
@@ -21,17 +23,15 @@ export const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 2rem;
-    text-transform: uppercase;
+    font-family: Rubik, sans-serif, serif;
     padding: 2rem 0;
     font-weight: bold;
-    letter-spacing: 0.5rem;
     color: black;
     text-decoration: none;
     transition: color 0.3s linear;
 
     @media (max-width: 920px) {
-      font-size: 1.5rem;
+      font-size: 3rem;
       text-align: center;
     }
 
@@ -41,24 +41,28 @@ export const StyledMenu = styled.nav`
   }
 `;
 
-const Menu = ({ open }) => {
+const MobileMenu = ({ open, setOpen }) => {
   return !open ? null : (
-    <StyledMenu open={open}>
-      <a href="/">
+    <div>
+    <Burger open={open} setOpen={setOpen} />
+    <StyledMobileMenu open={open}>
+      <a href="/about">
         About
       </a>
-      <a href="/">
+      <a href="/works">
         Works
       </a>
-      <a href="/">
+      <a href="/resume">
         Resume
       </a>
-    </StyledMenu>
+    </StyledMobileMenu>
+    </div>
   );
 };
 
-Menu.propTypes = {
+MobileMenu.propTypes = {
   open: bool.isRequired,
+  setOpen: func.isRequired,
 };
 
-export default Menu;
+export default MobileMenu;

@@ -1,4 +1,4 @@
-import *  as React from 'react';
+import React from 'react';
 import styled from "@emotion/styled"
 
 const Nav = styled.nav`
@@ -32,6 +32,7 @@ const NavbarItem = styled.li`
 const NavIcon = styled.li`
   flex: 1;
 `
+
 const NavIcon2 = styled.span`
   color: #a9a9a9;
 `
