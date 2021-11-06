@@ -30,6 +30,7 @@ import CardChip from "../components/ui/CardChip";
 import CardContainer from "../components/ui/CardContainer";
 import CardContent from "../components/ui/CardContent";
 import Chip from "../components/ui/Chip";
+import SEO from "../components/SEO";
 
 const MainDiv = styled.div`
   margin: 0 0 128px 0;
@@ -140,6 +141,7 @@ const IndexPage = () => {
 
   return (
     <>
+      <SEO title={"Tatya Koesandriani"} />
       <ParticleBackground />
       <Header />
       <HomePage>
