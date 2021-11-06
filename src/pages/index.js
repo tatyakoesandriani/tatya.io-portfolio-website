@@ -8,7 +8,6 @@ import { useMobileDevice } from "../helper/useMobileDevice";
 import ParticleBackground from "../components/particles/ParticleBackground";
 import PageFooter from "../components/PageFooter";
 import Header from "../components/Header";
-import SEO from "../components/SEO";
 import LottieDesktop from "../components/lottie/LottieDesktop";
 import LottieMobile from "../components/lottie/LottieMobile";
 
@@ -142,7 +141,6 @@ const IndexPage = () => {
   return (
     <>
       <ParticleBackground />
-      <SEO />
       <Header />
       <HomePage>
         <MainDiv>
