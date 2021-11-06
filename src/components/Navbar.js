@@ -37,7 +37,6 @@ const NavIcon2 = styled.span`
   color: #a9a9a9;
 `
 const Navbar = () => {
-  
   return (
     <Nav>
       <ListWrapper>

@@ -46,13 +46,13 @@ const MobileMenu = ({ open, setOpen }) => {
     <div>
     <Burger open={open} setOpen={setOpen} />
     <StyledMobileMenu open={open}>
-      <a href="/about">
+      <a href="#">
         About
       </a>
-      <a href="/works">
+      <a href="#">
         Works
       </a>
-      <a href="/resume">
+      <a href="#">
         Resume
       </a>
     </StyledMobileMenu>
