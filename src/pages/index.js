@@ -8,7 +8,6 @@ import { useMobileDevice } from "../helper/useMobileDevice";
 import ParticleBackground from "../components/particles/ParticleBackground";
 import PageFooter from "../components/PageFooter";
 import Header from "../components/Header";
-import SEO from "../components/SEO";
 import LottieDesktop from "../components/lottie/LottieDesktop";
 import LottieMobile from "../components/lottie/LottieMobile";
 
@@ -31,6 +30,7 @@ import CardChip from "../components/ui/CardChip";
 import CardContainer from "../components/ui/CardContainer";
 import CardContent from "../components/ui/CardContent";
 import Chip from "../components/ui/Chip";
+import SEO from "../components/SEO";
 
 const MainDiv = styled.div`
   margin: 0 0 128px 0;
@@ -141,8 +141,8 @@ const IndexPage = () => {
 
   return (
     <>
+      <SEO title={"Tatya Koesandriani"} />
       <ParticleBackground />
-      <SEO />
       <Header />
       <HomePage>
         <MainDiv>

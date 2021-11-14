@@ -4,6 +4,20 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        twitterUsername
+      }
+    }
+  }
+`;
+
 const SEO = ({ title, description, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
@@ -42,32 +56,18 @@ const SEO = ({ title, description, article }) => {
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
     </Helmet>
   )
-}
-
-export default SEO
+};
 
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   article: PropTypes.bool,
-}
+};
 
 SEO.defaultProps = {
   title: null,
   description: null,
   article: false,
-}
+};
 
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-        twitterUsername
-      }
-    }
-  }
-`
+export default SEO;
