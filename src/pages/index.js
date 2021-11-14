@@ -110,7 +110,7 @@ const OtherH1 = styled.h1`
   font-weight: 700;
   line-height: 150%;
   margin: 0 0 20px 0;
-  
+
   @media (max-width: 920px) {
     font-size: 24px;
     font-weight: 500;
@@ -221,9 +221,9 @@ const IndexPage = () => {
               <CardImage src={cardta}></CardImage>
               <CardTitle>Tokopedia Academy</CardTitle>
               <CardContent>
-                Family-oriented financial mobile application that can help
-                parents teach financial literacy to their kids from 7–13 years
-                old. Won bronze medal out of 510 other teams.
+                Learning ground for the future digital
+                talents in Indonesia by Tokopedia. Revamped to
+                let users to easily find and learn materials.
               </CardContent>
               <CardChip>
                 <Chip>Mobile</Chip>
@@ -239,8 +239,7 @@ const IndexPage = () => {
               <CardTitle>CATAPA: Onboarding</CardTitle>
               <CardContent>
                 CATAPA is an HR Intelligent system that helps HR to do digital
-                payroll and managing human resources powered by AI. I was given
-                a task to make a helpful onboarding.
+                payroll and managing human resources powered by AI. Made onboarding for users to simplify learning how to use the app.
               </CardContent>
               <CardChip>
                 <Chip>Desktop</Chip>

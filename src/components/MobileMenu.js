@@ -2,7 +2,7 @@ import React from "react";
 import { bool, func } from "prop-types";
 import styled from "@emotion/styled";
 
-import Burger from './Burger';
+import Burger from "./Burger";
 
 const StyledMobileMenu = styled.nav`
   z-index: 100;
@@ -42,20 +42,16 @@ const StyledMobileMenu = styled.nav`
 `;
 
 const MobileMenu = ({ open, setOpen }) => {
-  return !open ? null : (
+  return (
     <div>
-    <Burger open={open} setOpen={setOpen} />
-    <StyledMobileMenu open={open}>
-      <a href="/about">
-        About
-      </a>
-      <a href="/works">
-        Works
-      </a>
-      <a href="/resume">
-        Resume
-      </a>
-    </StyledMobileMenu>
+      <Burger open={open} setOpen={setOpen} />
+      {!open ? null : (
+        <StyledMobileMenu open={open}>
+          <a href="/about">About</a>
+          <a href="/works">Works</a>
+          <a href="/resume">Resume</a>
+        </StyledMobileMenu>
+      )}
     </div>
   );
 };
