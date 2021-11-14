@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineMedium } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
@@ -138,6 +138,8 @@ const IllustrationContainer = styled.div`
 
 const IndexPage = () => {
   const { width } = useMobileDevice();
+
+  useEffect(() => document.body.style.background = "#1c1c1c", []);
 
   return (
     <>

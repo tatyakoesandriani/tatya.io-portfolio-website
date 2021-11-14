@@ -11,22 +11,18 @@ import hmw from "../images/kukun/hmw.png";
 import up_parent from "../images/kukun/up_parent.png";
 import up_child from "../images/kukun/up_child.png";
 import ia from "../images/kukun/ia.jpg";
+import BackgroundLeft from "../images/kukun/background1.png";
+import BackgroundRight from "../images/kukun/background2.png";
+import Placeholder from "../images/kukun/placeholder.png";
 
 import Break from "../components/ui/Break.js";
 import PageFooter from "../components/PageFooter";
-
-//styles
-document.body.style = "background: #ffffff; padding: 0; margin: 0;";
-
-const ArticlePage = styled.main`
-  margin: auto;
-  font-family: Rubik, sans-serif, serif;
-  color: #333333;
-  line-height: 150%;
-  @media (min-width: 1500px) {
-    width: 1200px;
-  }
-`;
+import ArticleImage from "../components/ui/Article/ArticleImage";
+import ArticlePage from "../components/ui/Article/ArticlePage";
+import Heading from "../components/ui/Article/Heading";
+import Content from "../components/ui/Article/Content";
+import Section from "../components/ui/Article/Section";
+import ArticleDivider from "../components/ui/Article/ArticleDivider";
 
 const ArticleTitle = styled.div`
   font-size: 50px;
@@ -44,7 +40,7 @@ const ArticleSubTitle = styled.div`
   text-align: center;
 `;
 
-const ArticleCoverImg = styled.img`
+const CoverImage = styled.img`
   width: 100%;
 `;
 
@@ -162,15 +158,57 @@ const KukunPage = () => {
     <>
       <SEO />
       <Header />
+
       <ArticlePage>
         <ArticleTitle>Financial Literacy Made Easy for Children</ArticleTitle>
-
         <ArticleSubTitle>Kukun • Mobile App</ArticleSubTitle>
+      </ArticlePage>
 
-        <ArticleCoverImg src={kukuncover} />
+      <ArticleImage src={kukuncover} />
+
+      <ArticlePage>
+
+        <Section>
+          <Heading
+            section="Background"
+            title="A little bit about GEMASTIK XIII"
+          />
+          <Content columns={2}>
+            <ArticleImage src={BackgroundLeft} alt="Background" />
+            <ArticleImage src={BackgroundRight} alt="Background" />
+          </Content>
+        </Section>
+
+        <Break />
+
+        <Section>
+          <Heading
+            section="Problem"
+            title="According to data and based on our observation and personal experiences."
+          />
+          <Content columns={3}>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Complete financial missions for rewards</H3>
+              <ArticleDivider />
+              <Pg>Teaches the concept of earning money and thus grew a bigger appreciation towards it.</Pg>
+            </div>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Track Incomes and <br/> Expenses</H3>
+              <ArticleDivider />
+              <Pg>To make children to be more conscious on their spendings and can manage it well.</Pg>
+            </div>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Create habit of saving up for their dreams</H3>
+              <ArticleDivider />
+              <Pg>Lesson on preserving grit and resist temptation to get what children’s want.</Pg>
+            </div>
+          </Content>
+        </Section>
 
         <ArticleSection>
-          <Break />
           <H1>Overview</H1>
           <ArticleSubSection>
             <Col1>
