@@ -10,10 +10,23 @@ import painpoints from "../images/kukun/painpoints.png";
 import hmw from "../images/kukun/hmw.png";
 import up_parent from "../images/kukun/up_parent.png";
 import up_child from "../images/kukun/up_child.png";
-import ia from "../images/kukun/ia.jpg";
+import ia from "../images/kukun/ia.png";
 import BackgroundLeft from "../images/kukun/background1.png";
 import BackgroundRight from "../images/kukun/background2.png";
 import Placeholder from "../images/kukun/placeholder.png";
+import child_1 from "../images/kukun/child_1.gif";
+import child_2 from "../images/kukun/child_2.gif";
+import child_3 from "../images/kukun/child_3.gif";
+import parent_1 from "../images/kukun/parent_1.gif";
+import parent_2 from "../images/kukun/parent_2.gif";
+import parent_3 from "../images/kukun/parent_3.gif";
+import dr1 from "../images/kukun/dr1.jpg";
+import dr2 from "../images/kukun/dr2.jpg";
+import dr3 from "../images/kukun/dr3.jpg";
+import rs from "../images/kukun/rs.png";
+import part1 from "../images/kukun/part1.png";
+import part2 from "../images/kukun/part2.png";
+
 
 import Break from "../components/ui/Break.js";
 import PageFooter from "../components/PageFooter";
@@ -179,8 +192,6 @@ const KukunPage = () => {
           </Content>
         </Section>
 
-        <Break />
-
         <Section>
           <Heading
             section="Problem"
@@ -188,24 +199,179 @@ const KukunPage = () => {
           />
           <Content columns={3}>
             <div>
-              <ArticleImage src={Placeholder} alt="Background" />
+              <ArticleImage src={dr1} alt="Background" />
+            </div>
+            <div>
+              <ArticleImage src={dr2} alt="Background" />
+            </div>
+            <div>
+              <ArticleImage src={dr3} alt="Background" />
+            </div>
+          </Content>
+        </Section>
+
+
+        <Section>
+          <Heading
+            section="Solution"
+            title="Introducing Kukun, a family-oriented financial mobile application to help parents teach their kids financial literacy via gamification."
+          />
+          <Pg>Children's Dashboard</Pg>
+          <Content columns={3}>
+            <div>
+              <ArticleImage src={child_1} alt="Background" />
               <H3>Complete financial missions for rewards</H3>
               <ArticleDivider />
               <Pg>Teaches the concept of earning money and thus grew a bigger appreciation towards it.</Pg>
             </div>
             <div>
-              <ArticleImage src={Placeholder} alt="Background" />
+              <ArticleImage src={child_2} alt="Background" />
               <H3>Track Incomes and <br/> Expenses</H3>
               <ArticleDivider />
               <Pg>To make children to be more conscious on their spendings and can manage it well.</Pg>
             </div>
             <div>
-              <ArticleImage src={Placeholder} alt="Background" />
+              <ArticleImage src={child_3} alt="Background" />
               <H3>Create habit of saving up for their dreams</H3>
               <ArticleDivider />
               <Pg>Lesson on preserving grit and resist temptation to get what children’s want.</Pg>
             </div>
           </Content>
+
+          <Pg>Parent's Dashboard</Pg>
+          <Content columns={3}>
+            <div>
+              <ArticleImage src={parent_1} alt="Background" />
+              <H3>Create children’s<br/>missions</H3>
+              <ArticleDivider />
+              <Pg>Craft children’s financial missions match with parent’s beliefs and values.</Pg>
+            </div>
+            <div>
+              <ArticleImage src={parent_2} alt="Background" />
+              <H3>Approve children’s<br/>missions completion</H3>
+              <ArticleDivider />
+              <Pg>Approve and check children’s mission submission and let them gain reward.</Pg>
+            </div>
+            <div>
+              <ArticleImage src={parent_3} alt="Background" />
+              <H3>Track overall financial<br/>progress of children</H3>
+              <ArticleDivider />
+              <Pg>Can see overall development of children and their dreams.</Pg>
+            </div>
+          </Content>
+        </Section>
+
+
+        <Section>
+          
+          <Heading
+            section="Research"
+            title="We decided to validate our problem by handing out surveys to our target market, the parents. We got 50 respondants in total."
+          />
+          <ArticleImage src={rs} />
+        </Section>
+
+
+        <Section>
+          <Heading
+            section="Pain Points"
+            title="Did qualitative research by conducting user interviews to our survey respondents, then mapped out their pain points."
+          />
+          <Content columns={3}>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+            </div>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+            </div>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+            </div>
+          </Content>
+          <Content columns={2}>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+            </div>
+            <div>
+              <ArticleImage src={Placeholder} alt="Background" />
+            </div>
+          </Content>
+        </Section>
+
+        <Section>
+          <Heading
+            section="How Might We"
+            title="Utilized HMW method to map out problems into feasible opportunities that could be implemented to our product."
+          />
+          <ArticleImage src={hmw} />
+        </Section>
+
+        <Section>
+          <Heading
+            section="User Persona"
+            title="After getting an rough idea of our target user based on the conducted survey and interviews, we created two personas aiming at two different target user of our product to make us emphatize for the users at a deeper level."
+          />
+          <Content columns={2}>
+            <ArticleImage src={up_parent} alt="Background" />
+            <H3>The Parent.</H3>
+          </Content>
+          <Content columns={2}>
+            <H3>The Child.</H3>
+            <ArticleImage src={up_child} alt="Background" />
+          </Content>
+        </Section>
+
+        <Section>
+          <Heading
+            section="Information Architecture"
+            title="Information architecture were drafted to guide us to determine the hierarchy and structure of our product. It helped us organize and improve discoverability of informations for the users."
+          />
+          <ArticleImage src={ia} />
+        </Section>
+
+        <Section>
+          <Heading
+            section="Usability Testing"
+            title="We validate our product by doing online usability testing to 14 users (7 parents and 7 children) utilizing zoom, since we’re conducting it on a pandemic. "
+          />
+
+          <H3>Participants</H3>
+          <Content columns={2}>
+            <ArticleImage src={part1} alt="Background" />
+            <ArticleImage src={part2} alt="Background" />
+          </Content>
+
+          <H3>Results</H3>
+          <Content columns={2}>
+            <ArticleImage src={Placeholder} alt="Background" />
+            <ArticleImage src={Placeholder} alt="Background" />
+          </Content>
+
+          <H3>Feedback Capture Grid</H3>
+          <Content columns={2}>
+            <ArticleImage src={Placeholder} alt="Background" />
+            <ArticleImage src={Placeholder} alt="Background" />
+          </Content>
+        </Section>
+
+        <Section>
+          <Heading
+            section="Iterations"
+            title="Iterations were made after collecting feedback from the test we did."
+          />
+
+          <Content columns={2}>
+            <ArticleImage src={Placeholder} alt="Background" />
+            <ArticleImage src={Placeholder} alt="Background" />
+          </Content>
+        </Section>
+
+        <Section>
+          <Heading
+            section="Final Thoughts"
+            title="There had been a lot of challenges while designing a dedicated app for children, as most of them have not even acquire basic logic of an app and more likely to trust their intuition and instincts. I also learned that validation process is very crucial because it turns out our assumption about children is not as accurate as we think it is when we actually tested it. Also touching a difficult topic (financial education for children) is not possible without actually consulting to an expert, which we eventually did.
+            "
+          />
         </Section>
 
         <ArticleSection>
