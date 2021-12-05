@@ -27,7 +27,6 @@ import rs from "../images/kukun/rs.png";
 import part1 from "../images/kukun/part1.png";
 import part2 from "../images/kukun/part2.png";
 
-
 import Break from "../components/ui/Break.js";
 import PageFooter from "../components/PageFooter";
 import ArticleImage from "../components/ui/Article/ArticleImage";
@@ -125,6 +124,14 @@ const H_2 = styled.h2`
 
 const H3 = styled.h3``;
 
+const PgTitle = styled.p`
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 64px;
+  margin-bottom: 24px;
+  line-height: 150%;
+`;
+
 const Pg = styled.p`
   font-size: 18px;
   font-weight: 400;
@@ -180,7 +187,6 @@ const KukunPage = () => {
       <ArticleImage src={kukuncover} />
 
       <ArticlePage>
-
         <Section>
           <Heading
             section="Background"
@@ -210,60 +216,86 @@ const KukunPage = () => {
           </Content>
         </Section>
 
-
         <Section>
           <Heading
             section="Solution"
             title="Introducing Kukun, a family-oriented financial mobile application to help parents teach their kids financial literacy via gamification."
           />
-          <Pg>Children's Dashboard</Pg>
+          <PgTitle>Children's Dashboard</PgTitle>
           <Content columns={3}>
             <div>
               <ArticleImage src={child_1} alt="Background" />
               <H3>Complete financial missions for rewards</H3>
               <ArticleDivider />
-              <Pg>Teaches the concept of earning money and thus grew a bigger appreciation towards it.</Pg>
+              <Pg>
+                Teaches the concept of earning money and thus grew a bigger
+                appreciation towards it.
+              </Pg>
             </div>
             <div>
               <ArticleImage src={child_2} alt="Background" />
-              <H3>Track Incomes and <br/> Expenses</H3>
+              <H3>
+                Track Incomes and <br /> Expenses
+              </H3>
               <ArticleDivider />
-              <Pg>To make children to be more conscious on their spendings and can manage it well.</Pg>
+              <Pg>
+                To make children to be more conscious on their spendings and can
+                manage it well.
+              </Pg>
             </div>
             <div>
               <ArticleImage src={child_3} alt="Background" />
               <H3>Create habit of saving up for their dreams</H3>
               <ArticleDivider />
-              <Pg>Lesson on preserving grit and resist temptation to get what children’s want.</Pg>
+              <Pg>
+                Lesson on preserving grit and resist temptation to get what
+                children’s want.
+              </Pg>
             </div>
           </Content>
 
-          <Pg>Parent's Dashboard</Pg>
+          <PgTitle>Parent's Dashboard</PgTitle>
           <Content columns={3}>
             <div>
               <ArticleImage src={parent_1} alt="Background" />
-              <H3>Create children’s<br/>missions</H3>
+              <H3>
+                Create children’s
+                <br />
+                missions
+              </H3>
               <ArticleDivider />
-              <Pg>Craft children’s financial missions match with parent’s beliefs and values.</Pg>
+              <Pg>
+                Craft children’s financial missions match with parent’s beliefs
+                and values.
+              </Pg>
             </div>
             <div>
               <ArticleImage src={parent_2} alt="Background" />
-              <H3>Approve children’s<br/>missions completion</H3>
+              <H3>
+                Approve children’s
+                <br />
+                missions completion
+              </H3>
               <ArticleDivider />
-              <Pg>Approve and check children’s mission submission and let them gain reward.</Pg>
+              <Pg>
+                Approve and check children’s mission submission and let them
+                gain reward.
+              </Pg>
             </div>
             <div>
               <ArticleImage src={parent_3} alt="Background" />
-              <H3>Track overall financial<br/>progress of children</H3>
+              <H3>
+                Track overall financial
+                <br />
+                progress of children
+              </H3>
               <ArticleDivider />
               <Pg>Can see overall development of children and their dreams.</Pg>
             </div>
           </Content>
         </Section>
 
-
         <Section>
-          
           <Heading
             section="Research"
             title="We decided to validate our problem by handing out surveys to our target market, the parents. We got 50 respondants in total."
@@ -271,29 +303,67 @@ const KukunPage = () => {
           <ArticleImage src={rs} />
         </Section>
 
-
         <Section>
           <Heading
             section="Pain Points"
             title="Did qualitative research by conducting user interviews to our survey respondents, then mapped out their pain points."
           />
           <Content columns={3}>
-            <div>
+            <div style={{ textAlign: "center" }}>
               <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Children lacks of discipline</H3>
+              <Pg>
+                Only want to play games all day and sulks when they are told to
+                do their chores.
+              </Pg>
             </div>
-            <div>
+            <div style={{ textAlign: "center" }}>
               <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Children are not educated financially</H3>
+              <Pg>
+                Can not differ between what they want or need and tend to spend
+                money lavishly.
+              </Pg>
             </div>
-            <div>
+            <div style={{ textAlign: "center" }}>
               <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Saving in physical piggybank is inefficient</H3>
+              <Pg>
+                Piggybank is easily opened and very tempting to take money from
+                it.
+              </Pg>
             </div>
           </Content>
-          <Content columns={2}>
-            <div>
+          <Content columns={6}>
+            <div
+              style={{
+                gridColumn: "span 2",
+                gridColumnStart: 2,
+                gridColumnEnd: 4,
+                textAlign: "center",
+              }}
+            >
               <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Children does not understand existing financial app</H3>
+              <Pg>
+                Confused when faced with complex app and very prone to fraud and
+                security issues.
+              </Pg>
             </div>
-            <div>
+            <div
+              style={{
+                gridColumn: "span 2",
+                gridColumnStart: 4,
+                gridColumnEnd: 6,
+                textAlign: "center",
+              }}
+            >
               <ArticleImage src={Placeholder} alt="Background" />
+              <H3>Children’s smartphone usage is hard to control</H3>
+              <Pg>
+                Parents are afraid unattended financial app usage can lead them
+                to be overconsumptive.
+              </Pg>
             </div>
           </Content>
         </Section>
@@ -311,13 +381,21 @@ const KukunPage = () => {
             section="User Persona"
             title="After getting an rough idea of our target user based on the conducted survey and interviews, we created two personas aiming at two different target user of our product to make us emphatize for the users at a deeper level."
           />
-          <Content columns={2}>
-            <ArticleImage src={up_parent} alt="Background" />
-            <H3>The Parent.</H3>
+          <Content columns={4}>
+            <ArticleImage
+              src={up_parent}
+              alt="Background"
+              style={{ gridColumn: "span 3" }}
+            />
+            <H3 style={{ margin: "auto" }}>The Parent.</H3>
           </Content>
-          <Content columns={2}>
-            <H3>The Child.</H3>
-            <ArticleImage src={up_child} alt="Background" />
+          <Content columns={4}>
+            <H3 style={{ margin: "auto" }}>The Child.</H3>
+            <ArticleImage
+              src={up_child}
+              alt="Background"
+              style={{ gridColumn: "span 3" }}
+            />
           </Content>
         </Section>
 

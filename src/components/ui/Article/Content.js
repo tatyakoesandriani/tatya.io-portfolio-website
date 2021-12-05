@@ -8,6 +8,7 @@ const Content = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
+  margin-bottom: 2rem;
 `;
 
 Content.propTypes = {
